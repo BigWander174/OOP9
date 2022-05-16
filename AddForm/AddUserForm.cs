@@ -4,8 +4,8 @@ namespace OOP9.AddForm
 {
     public partial class AddUserForm : Form
     {
-        private Form1 _form1;
-        public AddUserForm(Form1 form1)
+        private OOP _form1;
+        public AddUserForm(OOP form1)
         {
             InitializeComponent();
             _form1 = form1;
@@ -18,12 +18,12 @@ namespace OOP9.AddForm
 
         private void addButton_Click(object sender, EventArgs e)
         {
-            var user =  new PhoneBook
+            var user =  new User
             {
                 Name = nameBox.Text,
                 Surname = surnameBox.Text,
                 Lastname = lastnameBox.Text,
-                Phone = phoneBox.Text
+                Phone = Convert.ToInt64(phoneBox.Text)
             };
 
             _form1.AddNewUser(user);
